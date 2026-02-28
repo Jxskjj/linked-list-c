@@ -147,4 +147,4 @@ void list_clear(List* list);
  */
 const char* list_result_to_string(ListResult result);
 
-#endif // LINKED_LIST_H
+#endif 
