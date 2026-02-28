@@ -12,7 +12,7 @@ build/
 .idea/
 *.swp
 *.swo
-.qtcreator
+.qtcreator/
 
 .DS_Store
 Thumbs.db
