@@ -1,0 +1,17 @@
+*.o
+*.obj
+
+*.exe
+*.out
+linkedlist
+
+obj/
+build/
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
