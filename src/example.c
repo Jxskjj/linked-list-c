@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void clear_screen() {
+void clear_screen() 
+{
     #ifdef _WIN32
         system("cls");
     #else
@@ -10,26 +11,30 @@ void clear_screen() {
     #endif
 }
 
-void wait_for_enter() {
+void wait_for_enter() 
+{
     printf("\nPress Enter to continue...");
     while (getchar() != '\n');
     getchar();
 }
 
-int main() {
+int main() 
+{
     int value, index;
     ListResult result;
-    
+    clear_screen();
     printf("=== Doubly Linked List ===\n");
     printf("Enter first element: ");
-    if (scanf("%d", &value) != 1) {
+    if (scanf("%d", &value) != 1) 
+    {
         printf("Invalid input\n");
         return 1;
     }
     while (getchar() != '\n');
     
     List* list = list_create_with_value(value);
-    if (!list) {
+    if (!list) 
+    {
         printf("Failed to create list\n");
         return 1;
     }
@@ -53,7 +58,8 @@ int main() {
         printf("Choice: ");
         
         int choice;
-        if (scanf("%d", &choice) != 1) {
+        if (scanf("%d", &choice) != 1) 
+        {
             printf("\nInvalid input\n");
             while (getchar() != '\n');
             wait_for_enter();
@@ -62,48 +68,73 @@ int main() {
         
         printf("\n");
         
-        switch (choice) {
+        switch (choice) 
+        {
             case 1:
                 printf("Enter value: ");
-                if (scanf("%d", &value) != 1) break;
+                if (scanf("%d", &value) != 1)
+                {
+                    break;
+                }
                 result = list_push_front(list, value);
                 printf("Result: %s\n", list_result_to_string(result));
                 break;
                 
             case 2:
                 printf("Enter value: ");
-                if (scanf("%d", &value) != 1) break;
+                 if (scanf("%d", &value) != 1)
+                {
+                    break;
+                }
                 result = list_push_back(list, value);
                 printf("Result: %s\n", list_result_to_string(result));
                 break;
                 
             case 3:
                 printf("Enter index: ");
-                if (scanf("%d", &index) != 1) break;
+                 if (scanf("%d", &index) != 1)
+                {
+                    break;
+                }
                 printf("Enter value: ");
-                if (scanf("%d", &value) != 1) break;
+                 if (scanf("%d", &value) != 1)
+                {
+                    break;
+                }
                 result = list_insert_at(list, index, value);
                 printf("Result: %s\n", list_result_to_string(result));
                 break;
                 
             case 4:
                 printf("Enter index: ");
-                if (scanf("%d", &index) != 1) break;
+                if (scanf("%d", &index) != 1)
+                {
+                    break;
+                }
                 result = list_remove_at(list, index, &value);
-                if (result == LIST_OK) {
+                if (result == LIST_OK) 
+                {
                     printf("Removed value: %d\n", value);
-                } else {
+                } 
+                else 
+                {
                     printf("Result: %s\n", list_result_to_string(result));
                 }
                 break;
                 
             case 5:
                 printf("Enter index: ");
-                if (scanf("%d", &index) != 1) break;
+                if (scanf("%d", &value) != 1)
+                {
+                    break;
+                }
                 result = list_get_at(list, index, &value);
-                if (result == LIST_OK) {
+                if (result == LIST_OK) 
+                {
                     printf("Value at %d: %d\n", index, value);
-                } else {
+                } 
+                else 
+                {
                     printf("Result: %s\n", list_result_to_string(result));
                 }
                 break;
