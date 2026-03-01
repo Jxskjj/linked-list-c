@@ -26,3 +26,9 @@ int list_is_empty(const List* list);
 void list_print(const List* list);
 void list_clear(List* list);
 ```
+
+## Run
+```bash
+cmake -B build
+./build/linkedlist 
+```
