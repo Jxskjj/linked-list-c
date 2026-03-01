@@ -124,7 +124,7 @@ int main()
                 
             case 5:
                 printf("Enter index: ");
-                if (scanf("%d", &value) != 1)
+                if (scanf("%d", &index) != 1)
                 {
                     break;
                 }
