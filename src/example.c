@@ -1,7 +1,6 @@
 #include "../inc/LinkedList.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 void clear_screen() 
 {
     #ifdef _WIN32
@@ -146,7 +145,7 @@ int main()
                 
             case 7:
                 list_destroy(list);
-                printf("Goodbye!\n");
+                printf("Bye!\n");
                 return 0;
                 
             default:
